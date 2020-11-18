@@ -1,0 +1,10 @@
+[Unit]
+Description=Script to start minidlna-db-autorefresh
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/sh -c 'minidlnad -R && systemctl restart minidlna'
+
+[Install]
+WantedBy=multi-user.target
